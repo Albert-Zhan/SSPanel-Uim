@@ -37,9 +37,15 @@
             </ul>
             <ul class="navbar-nav ml-auto align-items-lg-center d-none d-lg-block">
                 <li class="ml-lg-3 nav-item">
+                    {if !$user->isLogin}
                     <a href="/auth/login" class="btn btn-round smooth btn-icon icon-left">
                         <i class="fas fa-sign-in-alt"></i> 登录
                     </a>
+                    {else}
+                    <a href="/user" class="btn btn-round smooth btn-icon icon-left">
+                        <i class="fas fa-user-tie"></i> 用户中心
+                    </a>
+                    {/if}
                 </li>
             </ul>
         </div>

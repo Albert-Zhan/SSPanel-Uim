@@ -66,6 +66,7 @@ class HomeController extends BaseController
             ->assign('enable_regcaptcha', $_ENV['enable_reg_captcha'])
             ->assign('base_url', $_ENV['baseUrl'])
             ->assign('recaptcha_sitekey', $recaptcha_sitekey)
+            ->assign('user', $this->user)
             ->fetch('index.tpl'));
     }
 
