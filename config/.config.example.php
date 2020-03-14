@@ -386,10 +386,6 @@ $_ENV['userCenterClient']     = [
             'support'        => 'SS/SSR/VMess',
             'download_urls'  => [
                 [
-                    'name' => '本站下载',
-                    'url'  => 'https://google.com',
-                ],
-                [
                     'name' => '官方下载',
                     'url'  => 'https://baidu.com',
                 ]
