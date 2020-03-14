@@ -83,7 +83,7 @@
                             <div class="form-group form-group-label">
                                 <label class="floating-label" for="class_name">等级名称</label>
                                 <input class="form-control maxwidth-edit" id="class_name" type="text"
-                                       value="{$shop->class_name}">
+                                       value="{$shop->class_name()}">
                             </div>
 
                             <div class="form-group form-group-label">

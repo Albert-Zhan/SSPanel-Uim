@@ -100,6 +100,11 @@ class Shop extends Model
         return 0;
     }
 
+    public function class_name(){
+        $content = json_decode($this->attributes['content']);
+        return $content->class_name ?? '';
+    }
+
     public function user_class()
     {
         $content = json_decode($this->attributes['content']);
