@@ -6,10 +6,9 @@
 //如需换行，直接换行即可，无需换行符
 //【新增/删除】config无需写入迁移附注
 $_ENV['config_migrate_notice'] =
-'enable_geetest_* 已变更为 enable_*_captcha
+    'enable_geetest_* 已变更为 enable_*_captcha
 crisp已被替换为mylivechat
 telegrma_qrcode被重命名为qrcode
-
 ';
 $_ENV['version'] = 1;    //仅当涉及【需要修改config以外的文件】时才需要+1，站长勿动
 
