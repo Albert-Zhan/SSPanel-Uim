@@ -129,12 +129,18 @@
                                 </div>
 
                                 <div class="form-group form-group-label">
+                                    <label class="floating-label" for="class_name">等级名称</label>
+                                    <input class="form-control maxwidth-edit" id="class_name" type="text" value=""
+                                           name="class_name">
+                                    <p class="form-control-guide"><i class="material-icons">info</i>等级名称必填</p>
+                                </div>
+
+                                <div class="form-group form-group-label">
                                     <label class="floating-label" for="class">节点等级</label>
                                     <input class="form-control maxwidth-edit" id="class" type="text" value="0"
                                            name="class">
                                     <p class="form-control-guide"><i class="material-icons">info</i>不分级请填0，分级填写相应数字</p>
                                 </div>
-
 
                                 <div class="form-group form-group-label">
                                     <label class="floating-label" for="group">节点群组</label>

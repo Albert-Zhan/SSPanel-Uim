@@ -100,7 +100,7 @@
 
                         <div class="nodetitle">
                             <a class="waves-effect waves-button" data-toggle="collapse" href="#cardgroup{$class}" aria-expanded="true" aria-controls="cardgroup{$class}">
-                                <span>{if $class == 0}普通{else}VIP {$node['class']} {/if}用户节点</span>
+                                <span>{$node['class_name']}</span>
                                 <i class="material-icons">expand_more</i>
                             </a>
                         </div>

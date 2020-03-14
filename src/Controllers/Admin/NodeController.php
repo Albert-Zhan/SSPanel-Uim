@@ -28,7 +28,7 @@ class NodeController extends AdminController
             'node_bandwidth' => '已走流量/GB', 'node_bandwidth_limit' => '流量限制/GB',
             'bandwidthlimit_resetday' => '流量重置日', 'node_heartbeat' => '上一次活跃时间',
             'custom_method' => '自定义加密', 'custom_rss' => '自定义协议以及混淆',
-            'mu_only' => '只启用单端口多用户'
+            'mu_only' => '只启用单端口多用户','class_name'=>'等级名称',
         );
         $table_config['default_show_column'] = array('op', 'id', 'name', 'sort');
         $table_config['ajax_url'] = 'node/ajax';
@@ -83,6 +83,7 @@ class NodeController extends AdminController
             Radius::AddNas($node->node_ip, $request->getParam('server'));
         }
         $node->node_class = $request->getParam('class');
+        $node->class_name = $request->getParam('class_name');
         $node->node_bandwidth_limit = $request->getParam('node_bandwidth_limit') * 1024 * 1024 * 1024;
         $node->bandwidthlimit_resetday = $request->getParam('bandwidthlimit_resetday');
 
@@ -173,6 +174,7 @@ class NodeController extends AdminController
 
         $node->status = $request->getParam('status');
         $node->node_class = $request->getParam('class');
+        $node->class_name = $request->getParam('class_name');
         $node->node_bandwidth_limit = $request->getParam('node_bandwidth_limit') * 1024 * 1024 * 1024;
         $node->bandwidthlimit_resetday = $request->getParam('bandwidthlimit_resetday');
 
