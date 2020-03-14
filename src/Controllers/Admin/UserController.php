@@ -485,7 +485,6 @@ class UserController extends AdminController
                         ->orwhere('node_speedlimit', 'LIKE', "%$search%")
                         ->orwhere('im_value', 'LIKE', "%$search%")
                         ->orwhere('class', 'LIKE', "%$search%")
-                        ->orwhere('class_name', 'LIKE', "%$search%")
                         ->orwhere('class_expire', 'LIKE', "%$search%")
                         ->orwhere('expire_in', 'LIKE', "%$search%")
                         ->orwhere('remark', 'LIKE', "%$search%")
@@ -517,7 +516,6 @@ class UserController extends AdminController
                         ->orwhere('node_speedlimit', 'LIKE', "%$search%")
                         ->orwhere('im_value', 'LIKE', "%$search%")
                         ->orwhere('class', 'LIKE', "%$search%")
-                        ->orwhere('class_name', 'LIKE', "%$search%")
                         ->orwhere('class_expire', 'LIKE', "%$search%")
                         ->orwhere('expire_in', 'LIKE', "%$search%")
                         ->orwhere('remark', 'LIKE', "%$search%")
@@ -575,7 +573,6 @@ class UserController extends AdminController
             $tempdata['node_group']           = $user->node_group;
             $tempdata['expire_in']            = $user->expire_in;
             $tempdata['class']                = $user->class;
-            $tempdata['class_name']           = $user->class_name;
             $tempdata['class_expire']         = $user->class_expire;
             $tempdata['passwd']               = $user->passwd;
             $tempdata['port']                 = $user->port;
