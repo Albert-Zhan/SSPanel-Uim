@@ -238,7 +238,7 @@ class NodeController extends AdminController
             'node_bandwidth' => '已走流量/GB', 'node_bandwidth_limit' => '流量限制/GB',
             'bandwidthlimit_resetday' => '流量重置日', 'node_heartbeat' => '上一次活跃时间',
             'custom_method' => '自定义加密', 'custom_rss' => '自定义协议以及混淆',
-            'mu_only' => '只启用单端口多用户'
+            'mu_only' => '只启用单端口多用户','class_name'=>'等级名称',
         );
         $key_str = '';
         foreach ($total_column as $single_key => $single_value) {
