@@ -244,6 +244,12 @@
                                 <p class="form-control-guide"><i class="material-icons">info</i>用户只能访问到等级小于等于这个数字的节点</p>
                             </div>
 
+                            <div class="form-group form-group-label">
+                                <label class="floating-label" for="class_name">级别名称</label>
+                                <input class="form-control maxwidth-edit" id="class_name" name="class_name" type="text"
+                                       value="{$edit_user->class_name}">
+                                <p class="form-control-guide"><i class="material-icons">info</i>级别名称</p>
+                            </div>
 
                             <div class="form-group form-group-label">
                                 <label class="floating-label" for="class_expire">用户等级过期时间</label>
@@ -382,6 +388,7 @@
                     forbidden_ip: $$getValue('forbidden_ip'),
                     forbidden_port: $$getValue('forbidden_port'),
                     class: $$getValue('class'),
+                    class_name: $$getValue('class_name'),
                     class_expire: $$getValue('class_expire'),
                     expire_in: $$getValue('expire_in'),
                     node_connector: $$getValue('node_connector'),

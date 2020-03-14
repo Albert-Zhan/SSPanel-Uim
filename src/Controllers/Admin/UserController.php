@@ -43,6 +43,7 @@ class UserController extends AdminController
             'node_group'            => '群组',
             'expire_in'             => '账户过期时间',
             'class'                 => '等级',
+            'class_name'            => '等级名称',
             'class_expire'          => '等级过期时间',
             'passwd'                => '连接密码',
             'port'                  => '连接端口',
@@ -361,6 +362,7 @@ class UserController extends AdminController
         $user->remark           = $request->getParam('remark');
         $user->money            = $request->getParam('money');
         $user->class            = $request->getParam('class');
+        $user->class_name       = $request->getParam('class_name');
         $user->class_expire     = $request->getParam('class_expire');
         $user->expire_in        = $request->getParam('expire_in');
 
@@ -483,6 +485,7 @@ class UserController extends AdminController
                         ->orwhere('node_speedlimit', 'LIKE', "%$search%")
                         ->orwhere('im_value', 'LIKE', "%$search%")
                         ->orwhere('class', 'LIKE', "%$search%")
+                        ->orwhere('class_name', 'LIKE', "%$search%")
                         ->orwhere('class_expire', 'LIKE', "%$search%")
                         ->orwhere('expire_in', 'LIKE', "%$search%")
                         ->orwhere('remark', 'LIKE', "%$search%")
@@ -514,6 +517,7 @@ class UserController extends AdminController
                         ->orwhere('node_speedlimit', 'LIKE', "%$search%")
                         ->orwhere('im_value', 'LIKE', "%$search%")
                         ->orwhere('class', 'LIKE', "%$search%")
+                        ->orwhere('class_name', 'LIKE', "%$search%")
                         ->orwhere('class_expire', 'LIKE', "%$search%")
                         ->orwhere('expire_in', 'LIKE', "%$search%")
                         ->orwhere('remark', 'LIKE', "%$search%")
@@ -571,6 +575,7 @@ class UserController extends AdminController
             $tempdata['node_group']           = $user->node_group;
             $tempdata['expire_in']            = $user->expire_in;
             $tempdata['class']                = $user->class;
+            $tempdata['class_name']           = $user->class_name;
             $tempdata['class_expire']         = $user->class_expire;
             $tempdata['passwd']               = $user->passwd;
             $tempdata['port']                 = $user->port;
