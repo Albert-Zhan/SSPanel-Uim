@@ -649,7 +649,7 @@ ALTER TABLE `user` ADD `is_multi_user` INT NOT NULL DEFAULT '0' AFTER `is_hide`;
 
 ALTER TABLE `ss_node` ADD `mu_only` INT NULL DEFAULT '0' AFTER `custom_rss`;
 
-ALTER TABLE `ss_node` ADD `class_name` VARCHAR(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '\'\'' AFTER `traffic_rate`;
+ALTER TABLE `ss_node` ADD `class_name` VARCHAR(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' AFTER `traffic_rate`;
 
 CREATE TABLE IF NOT EXISTS `relay` (
   `id` bigint(20) NOT NULL,
