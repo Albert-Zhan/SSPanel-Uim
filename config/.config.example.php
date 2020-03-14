@@ -142,7 +142,6 @@ $_ENV['subscribeLog_show']          = true;                         //是否允�
 $_ENV['subscribeLog_keep_days']     = 7;		                    //订阅记录保留天数
 
 $_ENV['mu_port_migration']          = false;                        //为后端直接下发偏移后的端口
-$_ENV['add_emoji_to_node_name']     = false;                        //为部分订阅中默认添加 emoji
 $_ENV['add_appName_to_ss_uri']      = true;                         //为 SS 节点名称中添加站点名
 
 $_ENV['subscribe_client']           = true;                         //下载协议客户端时附带节点和订阅信息
