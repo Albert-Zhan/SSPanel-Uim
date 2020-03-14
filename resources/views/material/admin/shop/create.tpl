@@ -76,6 +76,11 @@
                         <div class="card-inner">
 
                             <div class="form-group form-group-label">
+                                <label class="floating-label" for="class_name">等级名称</label>
+                                <input class="form-control maxwidth-edit" id="class_name" type="text" value="0">
+                            </div>
+
+                            <div class="form-group form-group-label">
                                 <label class="floating-label" for="class">等级</label>
                                 <input class="form-control maxwidth-edit" id="class" type="text" value="0">
                             </div>
@@ -201,6 +206,7 @@
                     speedlimit: $$getValue('speedlimit'),
                     connector: $$getValue('connector'),
                     expire: $$getValue('expire'),
+                    class_name: $$getValue('class_name'),
                     class: $$getValue('class'),
                     class_expire: $$getValue('class_expire'),
                     reset: $$getValue('reset'),

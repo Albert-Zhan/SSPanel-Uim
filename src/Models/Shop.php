@@ -157,6 +157,9 @@ class Shop extends Model
                         $user->expire_in = date('Y-m-d H:i:s', strtotime($user->expire_in) + $value * 86400);
                     }
                     break;
+                case 'class_name':
+                    $user->class_name = $value;
+                    break;
                 case 'class':
                     if ($_ENV['enable_bought_extend'] == true) {
                         if ($user->class == $value) {
