@@ -43,7 +43,6 @@ class UserController extends AdminController
             'node_group'            => '群组',
             'expire_in'             => '账户过期时间',
             'class'                 => '等级',
-            'class_name'            => '等级名称',
             'class_expire'          => '等级过期时间',
             'passwd'                => '连接密码',
             'port'                  => '连接端口',
