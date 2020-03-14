@@ -245,7 +245,7 @@
 
                                         {if $node['class'] != $class}
                                             {$class = $node['class']}
-                                            <p class="card-heading">{if $class == 0}普通{else}VIP {$node['class']} {/if}用户节点</p>
+                                            <p class="card-heading">{$node['class_name']}</p>
                                         {/if}
                                         <div class="tile tile-collapse">
                                             <div data-toggle="tile" data-target="#heading{$node['id']}">

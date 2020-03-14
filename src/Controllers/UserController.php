@@ -436,6 +436,7 @@ class UserController extends BaseController
 
             $array_node['id'] = $node->id;
             $array_node['class'] = $node->node_class;
+            $array_node['class_name'] = $node->class_name;
             $array_node['name'] = $node->name;
             if ($node->sort == 13) {
                 $server = Tools::ssv2Array($node->server);
@@ -1022,7 +1023,7 @@ class UserController extends BaseController
         $shop = Shop::where('id', $shop)->where('status', 1)->first();
 
         $orders = Bought::where('userid', $this->user->id)->get();
-        foreach ($orders as $order) 
+        foreach ($orders as $order)
         {
             $shop_item = Shop::where('id',$order['shopid'])->first();
             $shop_item = json_decode($shop_item['content']);
@@ -1034,7 +1035,7 @@ class UserController extends BaseController
                     $res['msg'] = '您购买的含有自动重置系统的套餐还未过期，无法购买新套餐';
                     return $response->getBody()->write(json_encode($res));
                 }
-            } 
+            }
         };
 
         if ($shop == null) {
