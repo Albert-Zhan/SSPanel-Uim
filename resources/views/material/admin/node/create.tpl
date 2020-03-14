@@ -218,6 +218,7 @@
             sort: {required: true},
             node_bandwidth_limit: {required: true},
             bandwidthlimit_resetday: {required: true}
+            class_name: {required: true}
         },
 
         submitHandler: () => {
@@ -256,6 +257,7 @@
                     status: $$getValue('status'),
                     node_speedlimit: $$getValue('node_speedlimit'),
                     sort: $$getValue('sort'),
+                    class_name: $$getValue('class_name'),
                     class: $$getValue('class'),
                     node_bandwidth_limit: $$getValue('node_bandwidth_limit'),
                     bandwidthlimit_resetday: $$getValue('bandwidthlimit_resetday'),

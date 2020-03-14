@@ -226,7 +226,8 @@
             node_speedlimit: {required: true},
             sort: {required: true},
             node_bandwidth_limit: {required: true},
-            bandwidthlimit_resetday: {required: true}
+            bandwidthlimit_resetday: {required: true},
+            class_name: {required: true}
         },
 
 
@@ -268,6 +269,7 @@
                     status: $$getValue('status'),
                     sort: $$getValue('sort'),
                     node_speedlimit: $$getValue('node_speedlimit'),
+                    class_name: $$getValue('class_name'),
                     class: $$getValue('class'),
                     node_bandwidth_limit: $$getValue('node_bandwidth_limit'),
                     bandwidthlimit_resetday: $$getValue('bandwidthlimit_resetday')
