@@ -357,6 +357,15 @@ class DefaultConfig
                 'operator_id'   => 0,
                 'operator_name' => '系统默认',
             ],
+            'Register.string.defaultClassName' => [
+                'key'           => $key,
+                'type'          => 'string',
+                'value'         => '普通版',
+                'name'          => '用户初始等级名称',
+                'comment'       => '用户初始等级名称',
+                'operator_id'   => 0,
+                'operator_name' => '系统默认',
+            ],
             'Register.string.defaultSpeedlimit' => [
                 'key'           => $key,
                 'type'          => 'string',

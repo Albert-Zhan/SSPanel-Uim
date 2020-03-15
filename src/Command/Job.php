@@ -780,7 +780,9 @@ class Job
                     echo $e->getMessage();
                 }
 
-                $user->class = 0;
+                $user->class = Config::getconfig('Register.string.defaultConn');
+                $user->class_name = Config::getconfig('Register.string.defaultClassName');
+
             }
 
             // 审计封禁解封
