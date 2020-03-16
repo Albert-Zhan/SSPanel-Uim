@@ -780,8 +780,9 @@ class Job
                     echo $e->getMessage();
                 }
 
-                $user->class = Config::getconfig('Register.string.defaultConn');
+                $user->class = Config::getconfig('Register.string.defaultClass');
                 $user->class_name = Config::getconfig('Register.string.defaultClassName');
+                $user->node_connector = Config::getconfig('Register.string.defaultConn');
 
             }
 
