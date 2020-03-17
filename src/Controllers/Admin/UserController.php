@@ -117,7 +117,7 @@ class UserController extends AdminController
         $user->forbidden_port       = $_ENV['reg_forbidden_port'];
         $user->im_type              = 2;
         $user->im_value             = $email;
-        $user->transfer_enable      = Tools::toGB((int) Config::getconfig('Register.string.defaultTraffic'));
+        $user->transfer_enable      = Tools::toGB(Config::getconfig('Register.string.defaultTraffic'));
         $user->invite_num           = (int) Config::getconfig('Register.string.defaultInviteNum');
         $user->auto_reset_day       = $_ENV['reg_auto_reset_day'];
         $user->auto_reset_bandwidth = $_ENV['reg_auto_reset_bandwidth'];
