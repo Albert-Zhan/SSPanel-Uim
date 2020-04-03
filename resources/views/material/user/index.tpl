@@ -122,11 +122,7 @@ table tr td:first-child {
                                 </div>
                                 <div class="nodemiddle node-flex">
                                     <div class="nodetype">
-                                        {if $user->node_speedlimit!=0}
-                                            <dd><code>{$user->node_speedlimit}</code>Mbps</dd>
-                                        {else}
                                             <dd>无限制</dd>
-                                        {/if}
                                     </div>
                                 </div>
                                 <div class="nodemiddle node-flex">
