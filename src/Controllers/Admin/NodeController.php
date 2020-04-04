@@ -336,6 +336,7 @@ class NodeController extends AdminController
                 ->orwhere('traffic_rate', 'LIKE', "%$search%")
                 ->orwhere('node_group', 'LIKE', "%$search%")
                 ->orwhere('node_class', 'LIKE', "%$search%")
+                ->orwhere('class_name', 'LIKE', "%$search%")
                 ->orwhere('node_speedlimit', 'LIKE', "%$search%")
                 ->orwhere('node_bandwidth', 'LIKE', "%$search%")
                 ->orwhere('node_bandwidth_limit', 'LIKE', "%$search%")
@@ -402,6 +403,7 @@ class NodeController extends AdminController
             $tempdata['traffic_rate']               = $node->traffic_rate;
             $tempdata['node_group']                 = $node->node_group;
             $tempdata['node_class']                 = $node->node_class;
+            $tempdata['class_name']                 = $node->class_name;
             $tempdata['node_speedlimit']            = $node->node_speedlimit;
             $tempdata['node_bandwidth']             = Tools::flowToGB($node->node_bandwidth);
             $tempdata['node_bandwidth_limit']       = Tools::flowToGB($node->node_bandwidth_limit);
