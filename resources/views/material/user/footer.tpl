@@ -1,6 +1,6 @@
 <footer class="ui-footer">
     <div class="container">
-        &copy;{date("Y")} {$config['appName']} | Powered by <a href="/staff">SSPANEL</a>
+        &copy;{date("Y")} {$config["appName"]} 版权所有
         {if $config['enable_analytics_code'] === true}{include file='analytics.tpl'}{/if}
     </div>
 </footer>
@@ -42,8 +42,6 @@
 <script src="/theme/material/js/base.min.js"></script>
 <script src="/theme/material/js/project.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/clipboard@1.5.16/dist/clipboard.min.js"></script>
-
-<script>console.table([['数据库查询', '执行时间'], ['{count($queryLog)} 次', '{$optTime} ms']])</script>
 
 </body>
 </html>
