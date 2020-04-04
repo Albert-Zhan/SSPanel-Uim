@@ -561,8 +561,10 @@ table tr td:first-child {
                                                         .
                                                         <a class="btn-dl" href="clash://install-config?url={urlencode($subInfo['clashr'])}"><i class="material-icons icon-sm">send</i> 配置一键导入</a>
                                                     </p>
-                                            {if count($config['userCenterClient']['Windows']) != 0}
-                                                {printClient items=$config['userCenterClient']['Windows']}
+                                            {if array_key_exists('Windows',$config['userCenterClient'])}
+                                                {if count($config['userCenterClient']['Windows']) != 0}
+                                                    {printClient items=$config['userCenterClient']['Windows']}
+                                                {/if}
                                             {/if}
 											</div>
 
@@ -662,8 +664,10 @@ table tr td:first-child {
                                                         使用方式：
                                                         <a class="copy-text btn-dl" data-clipboard-text="{$subInfo['ssr']}"><i class="material-icons icon-sm">send</i> 拷贝订阅链接</a>
                                                     </p>
-                                            {if count($config['userCenterClient']['macOS']) != 0}
-                                                {printClient items=$config['userCenterClient']['macOS']}
+                                            {if array_key_exists('macOS',$config['userCenterClient'])}
+                                                {if count($config['userCenterClient']['macOS']) != 0}
+                                                    {printClient items=$config['userCenterClient']['macOS']}
+                                                {/if}
                                             {/if}
 											</div>
 
@@ -790,8 +794,10 @@ table tr td:first-child {
                                                         .
                                                         <a class="btn-dl" onclick=AddSub("{$subInfo['shadowrocket']}","sub://")><i class="material-icons icon-sm">send</i> 拷贝该应用专属订阅链接</a>
                                                     </p>
-                                            {if count($config['userCenterClient']['iOS']) != 0}
-                                                {printClient items=$config['userCenterClient']['iOS']}
+                                            {if array_key_exists('iOS',$config['userCenterClient'])}
+                                                {if count($config['userCenterClient']['iOS']) != 0}
+                                                    {printClient items=$config['userCenterClient']['iOS']}
+                                                {/if}
                                             {/if}
 											</div>
 
@@ -904,8 +910,10 @@ table tr td:first-child {
                                                         .
                                                         <a class="copy-text btn-dl" data-clipboard-text="{$subInfo['kitsunebi']}"><i class="material-icons icon-sm">send</i> 拷贝该应用专属订阅链接</a>
                                                     </p>
-                                            {if count($config['userCenterClient']['Android']) != 0}
-                                                {printClient items=$config['userCenterClient']['Android']}
+                                            {if array_key_exists('Android',$config['userCenterClient'])}
+                                                {if count($config['userCenterClient']['Android']) != 0}
+                                                    {printClient items=$config['userCenterClient']['Android']}
+                                                {/if}
                                             {/if}
 											</div>
 
@@ -923,8 +931,10 @@ table tr td:first-child {
                                                         使用方式：
                                                         <a class="copy-text btn-dl" data-clipboard-text="{$subInfo['ssr']}"><i class="material-icons icon-sm">send</i> 拷贝订阅链接</a>
                                                     </p>
-                                            {if count($config['userCenterClient']['Linux']) != 0}
-                                                {printClient items=$config['userCenterClient']['Linux']}
+                                            {if array_key_exists('Linux',$config['userCenterClient'])}
+                                                {if count($config['userCenterClient']['Linux']) != 0}
+                                                    {printClient items=$config['userCenterClient']['Linux']}
+                                                {/if}
                                             {/if}
 											</div>
 
@@ -946,8 +956,10 @@ table tr td:first-child {
                                                         .
                                                         <a class="copy-text btn-dl" data-clipboard-text="{$subInfo['v2ray']}"><i class="material-icons icon-sm">send</i> 拷贝 V2Ray 订阅链接</a>
                                                     </p>
-                                            {if count($config['userCenterClient']['Router']) != 0}
-                                                {printClient items=$config['userCenterClient']['Router']}
+                                            {if array_key_exists('Router',$config['userCenterClient'])}
+                                                {if count($config['userCenterClient']['Router']) != 0}
+                                                    {printClient items=$config['userCenterClient']['Router']}
+                                                {/if}
                                             {/if}
 											</div>
 

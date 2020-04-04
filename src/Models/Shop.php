@@ -79,6 +79,12 @@ class Shop extends Model
         return $content->reset_exp ?? 0;
     }
 
+    public function traffic_package()
+    {
+        $content = json_decode($this->attributes['content']);
+        return isset($content->traffic_package);
+    }
+
     public function content_extra()
     {
         $content = json_decode($this->attributes['content']);
@@ -133,6 +139,12 @@ class Shop extends Model
     {
         $content = json_decode($this->attributes['content'], true);
         $content_text = '';
+
+        if (array_key_exists('traffic_package', $content)) {
+            $user->transfer_enable += $content['bandwidth'] * 1024 * 1024 * 1024;
+            $user->save();
+            return;
+        }
 
         foreach ($content as $key => $value) {
             switch ($key) {

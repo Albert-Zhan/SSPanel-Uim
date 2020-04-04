@@ -10,7 +10,7 @@ $_ENV['config_migrate_notice'] =
 crisp已被替换为mylivechat
 telegrma_qrcode被重命名为qrcode
 ';
-$_ENV['version'] = 1;    //仅当涉及【需要修改config以外的文件】时才需要+1，站长勿动
+$_ENV['version'] = 2;    //仅当涉及【需要修改config以外的文件】时才需要+1，站长勿动
 
 
 //基本设置--------------------------------------------------------------------------------------------
@@ -127,7 +127,6 @@ $_ENV['Subscribe']                  = true;                         //本站是�
 
 $_ENV['subUrl']                     = $_ENV['baseUrl'] . '/link/';  //订阅地址，如需和站点名称相同，请不要修改
 $_ENV['mergeSub']                   = true;                         //合并订阅设置 可选项 false / true
-$_ENV['add_emoji_to_node_name']     = false;                        //为部分订阅中默认添加 emoji
 $_ENV['enable_sub_extend']          = true;                         // 是否开启订阅中默认显示流量剩余以及账户到期时间以及 sub_message 中的信息
 
 // 订阅中的营销信息
@@ -142,6 +141,7 @@ $_ENV['subscribeLog_show']          = true;                         //是否允�
 $_ENV['subscribeLog_keep_days']     = 7;		                    //订阅记录保留天数
 
 $_ENV['mu_port_migration']          = false;                        //为后端直接下发偏移后的端口
+$_ENV['add_emoji_to_node_name']     = false;                        //为部分订阅中默认添加 emoji
 $_ENV['add_appName_to_ss_uri']      = true;                         //为 SS 节点名称中添加站点名
 
 $_ENV['subscribe_client']           = true;                         //下载协议客户端时附带节点和订阅信息
@@ -543,32 +543,5 @@ foreach ($_ENV['cdn_forwarded_ip'] as $cdn_forwarded_ip) {
         $list = explode(',', $_SERVER[$cdn_forwarded_ip]);
         $_SERVER['REMOTE_ADDR'] = $list[0];
         break;
-    }
-}
-
-// make replace _ENV with env
-function findKeyName($name)
-{
-    global $_ENV;
-    foreach ($_ENV as $configKey => $configValue) {
-        if (strtoupper($configKey) == $name) {
-            return $configKey;
-        }
-    }
-
-    return NULL;
-}
-
-foreach (getenv() as $envKey => $envValue) {
-    global $_ENV;
-    $envUpKey = strtoupper($envKey);
-    // Key starts with UIM_
-    if (substr($envUpKey, 0, 4) == "UIM_") {
-        // Vaild env key, set to _ENV
-        $configKey = substr($envUpKey, 4);
-        $realKey = findKeyName($configKey);
-        if ($realKey != NULL) {
-            $_ENV[$realKey] = $envValue;
-        }
     }
 }
