@@ -778,3 +778,5 @@ CREATE TABLE IF NOT EXISTS `telegram_tasks` (
 ALTER TABLE `detect_log` ADD `status` int(2) NOT NULL DEFAULT '0' AFTER `node_id`;
 
 ALTER TABLE `user` ADD `class_name` VARCHAR(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '普通版' AFTER `class`;
+
+ALTER TABLE `user` ADD COLUMN `uuid` TEXT NULL DEFAULT NULL COMMENT 'uuid' AFTER `passwd`;
