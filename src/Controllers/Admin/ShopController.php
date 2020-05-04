@@ -50,9 +50,7 @@ class ShopController extends AdminController
             $content['expire'] = $request->getParam('expire');
         }
 
-        if ($request->getParam('class') != 0) {
-            $content['class'] = $request->getParam('class');
-        }
+        $content['class'] = $request->getParam('class');
 
         if ($request->getParam('class_name') != '') {
             $content['class_name'] = $request->getParam('class_name');
@@ -139,9 +137,7 @@ class ShopController extends AdminController
             $content['expire'] = $request->getParam('expire');
         }
 
-        if ($request->getParam('class') != 0) {
-            $content['class'] = $request->getParam('class');
-        }
+        $content['class'] = $request->getParam('class');
 
         if ($request->getParam('class_name') != '') {
             $content['class_name'] = $request->getParam('class_name');
