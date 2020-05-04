@@ -57,6 +57,7 @@ $_ENV['mailgun_sender']  = '';
 $_ENV['smtp_host']          = '';                          // smtp 邮局服务器域
 $_ENV['smtp_username']      = '';                          // smtp 账户名
 $_ENV['smtp_port']          = 465;                         // smtp 端口(常见端口 25, 587 465)
+$_ENV['smtp_name']          = '';
 $_ENV['smtp_sender']        = '';                          // smtp 账户自定义显示名
 $_ENV['smtp_passsword']     = '';                          // stmp 账户密码
 $_ENV['smtp_ssl']           = true;                        // 支持 TLS/SSL 发信
