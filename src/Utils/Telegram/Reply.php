@@ -55,7 +55,7 @@ class Reply
     public static function getUserTitle($user)
     {
         if ($user->class > 0) {
-            $text = '尊敬的 VIP ' . $user->class . ' 您好：';
+            $text = '尊敬的' . $user->class_name . '用户您好：';
         } else {
             $text = '尊敬的用户您好：';
         }
