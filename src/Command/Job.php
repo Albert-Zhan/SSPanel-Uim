@@ -753,7 +753,7 @@ class Job extends Command
     public function updatedownload()
     {
         system(
-            'cd ' . BASE_PATH . '/public/ssr-download/ && git pull https://github.com/xcxnig/ssr-download.git && git gc'
+            'cd ' . BASE_PATH . '/public/ssr-download/ && git pull https://github.com/xcxnig/ssr-download.git --rebase && git gc'
         );
     }
 
