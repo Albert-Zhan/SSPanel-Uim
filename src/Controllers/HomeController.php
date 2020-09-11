@@ -29,7 +29,11 @@ class HomeController extends BaseController
      */
     public function index($request, $response, $args): ResponseInterface
     {
-        if ($_ENV['newIndex'] === false && $_ENV['theme'] == 'material') {
+        if($this->user->isLogin){
+            return $response->withRedirect('/user');
+        }
+        return $response->withRedirect('/auth/login');
+        /*if ($_ENV['newIndex'] === false && $_ENV['theme'] == 'material') {
             return $response->write($this->view()->fetch('indexold.tpl'));
         }
 
@@ -67,7 +71,7 @@ class HomeController extends BaseController
             ->assign('base_url', $_ENV['baseUrl'])
             ->assign('recaptcha_sitekey', $recaptcha_sitekey)
             ->assign('user', $this->user)
-            ->fetch('index.tpl'));
+            ->fetch('index.tpl'));*/
     }
 
     /**
