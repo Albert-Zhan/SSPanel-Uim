@@ -643,6 +643,11 @@ class UserController extends BaseController
         $newemail = $request->getParam('newemail');
         $oldemail = $user->email;
         $otheruser = User::where('email', $newemail)->first();
+        if ($_ENV['enable_telegram'] !== true) {
+            $res['ret'] = 0;
+            $res['msg'] = '未啓用用戶自行修改郵箱功能';
+            return $response->getBody()->write(json_encode($res));
+        }
         if (Config::getconfig('Register.bool.Enable_email_verify')) {
             $emailcode = $request->getParam('emailcode');
             $mailcount = EmailVerify::where('email', '=', $newemail)->where('code', '=', $emailcode)->where('expire_in', '>', time())->first();
@@ -674,6 +679,19 @@ class UserController extends BaseController
         }
         $antiXss = new AntiXSS();
         $user->email = $antiXss->xss_clean($newemail);
+        $user->save();
+
+        $res['ret'] = 1;
+        $res['msg'] = '修改成功';
+        return $this->echoJson($response, $res);
+    }
+
+    public function updateUsername($request, $response, $args)
+    {
+        $newusername = $request->getParam('newusername');
+        $user = $this->user;
+        $antiXss = new AntiXSS();
+        $user->user_name = $antiXss->xss_clean($newusername);
         $user->save();
 
         $res['ret'] = 1;

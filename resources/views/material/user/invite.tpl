@@ -144,6 +144,7 @@
                                                 <th>ID</th>
                                                 <th>被邀请用户ID</th>
                                                 <th>获得返利</th>
+                                                <th>返利時間</th>
                                             </tr>
                                             {foreach $paybacks as $payback}
                                                 <tr>
@@ -156,6 +157,7 @@
                                                         </td>
                                                     {/if}
                                                     <td>{$payback->ref_get} 元</td>
+                                                    <td class='payback-datetime'>{$payback->datetime}</td>
                                                 </tr>
                                             {/foreach}
                                         </table>
@@ -200,6 +202,18 @@
             })
         })
     })
+</script>
+<script>
+    $(".payback-datetime").each(function() {
+        var $this = $(this);
+        $this.text(() => {
+            var unix_timestamp = parseFloat($this.text());
+            var date = new Date(unix_timestamp*1000).toLocaleDateString("zh-CN");
+            var time = new Date(unix_timestamp).toLocaleTimeString("zh-CN");
+            var formattedTime = date + ' ' + time;
+            return formattedTime;
+        });
+    });
 </script>
 <script>
     $("#buy-invite").click(function () {
