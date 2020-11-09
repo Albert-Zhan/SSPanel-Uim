@@ -9,7 +9,6 @@
     <div class="container">
         <div class="col-lg-12 col-sm-12">
             <section class="content-inner margin-top-no">
-
                 <div class="card">
                     <div class="card-main">
                         <div class="card-inner">
@@ -17,34 +16,26 @@
                                 <label class="floating-label" for="name">名称</label>
                                 <input class="form-control maxwidth-edit" id="name" type="text">
                             </div>
-
-
                             <div class="form-group form-group-label">
                                 <label class="floating-label" for="price">价格</label>
                                 <input class="form-control maxwidth-edit" id="price" type="text">
                             </div>
-
                             <div class="form-group form-group-label">
                                 <label class="floating-label" for="auto_renew">自动续订天数</label>
                                 <input class="form-control maxwidth-edit" id="auto_renew" type="text" value="0">
                                 <p class="form-control-guide"><i class="material-icons">info</i>0为不允许自动续订，其他为到了那么多天之后就会自动从用户的账户上划钱抵扣
                                 </p>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
-
                 <div class="card">
                     <div class="card-main">
                         <div class="card-inner">
-
                             <div class="form-group form-group-label">
                                 <label class="floating-label" for="bandwidth">流量（GB）</label>
                                 <input class="form-control maxwidth-edit" id="bandwidth" type="text">
                             </div>
-
                             <div class="form-group form-group-label">
                                 <div class="checkbox switch">
                                     <label for="auto_reset_bandwidth">
@@ -57,21 +48,17 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="card">
                     <div class="card-main">
                         <div class="card-inner">
-
                             <div class="form-group form-group-label">
                                 <label class="floating-label" for="traffic-package-min">最低可购买用户等级</label>
                                 <input class="form-control maxwidth-edit" id="traffic-package-min" type="text">
                             </div>
-
                             <div class="form-group form-group-label">
                                 <label class="floating-label" for="traffic-package-max">最高可购买用户等级</label>
                                 <input class="form-control maxwidth-edit" id="traffic-package-max" type="text">
                             </div>
-
                             <div class="form-group form-group-label">
                                 <div class="checkbox switch">
                                     <label for="traffic-package-enable">
@@ -88,12 +75,9 @@
                         </div>
                     </div>
                 </div>
-
-
                 <div class="card">
                     <div class="card-main">
                         <div class="card-inner">
-
                             <div class="form-group form-group-label">
                                 <label class="floating-label" for="expire">账户有效期天数</label>
                                 <input class="form-control maxwidth-edit" id="expire" type="text" value="0">
@@ -101,11 +85,9 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="card">
                     <div class="card-main">
                         <div class="card-inner">
-
                             <div class="form-group form-group-label">
                                 <label class="floating-label" for="class_name">等级名称</label>
                                 <input class="form-control maxwidth-edit" id="class_name" type="text" value="0">
@@ -115,7 +97,6 @@
                                 <label class="floating-label" for="class">等级</label>
                                 <input class="form-control maxwidth-edit" id="class" type="text" value="0">
                             </div>
-
                             <div class="form-group form-group-label">
                                 <label class="floating-label" for="class_expire">等级有效期天数</label>
                                 <input class="form-control maxwidth-edit" id="class_expire" type="text" value="0">
@@ -123,7 +104,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="card">
                     <div class="card-main">
                         <div class="card-inner">
@@ -131,13 +111,10 @@
                                 <label class="floating-label" for="reset_exp">多少天内</label>
                                 <input class="form-control maxwidth-edit" id="reset_exp" type="number" value="0">
                             </div>
-
-
                             <div class="form-group form-group-label">
                                 <label class="floating-label" for="reset">每多少天</label>
                                 <input class="form-control maxwidth-edit" id="reset" type="number" value="0">
                             </div>
-
                             <div class="form-group form-group-label">
                                 <label class="floating-label" for="reset_value">重置流量为多少G</label>
                                 <input class="form-control maxwidth-edit" id="reset_value" type="number" value="0">
@@ -145,8 +122,6 @@
                         </div>
                     </div>
                 </div>
-
-
                 <div class="card">
                     <div class="card-main">
                         <div class="card-inner">
@@ -154,8 +129,6 @@
                                 <label class="floating-label" for="speedlimit">端口限速</label>
                                 <input class="form-control maxwidth-edit" id="speedlimit" type="number" value="0">
                             </div>
-
-
                             <div class="form-group form-group-label">
                                 <label class="floating-label" for="connector">IP限制</label>
                                 <input class="form-control maxwidth-edit" id="connector" type="number" value="0">
@@ -163,7 +136,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="card">
                     <div class="card-main">
                         <div class="card-inner">
@@ -179,12 +151,9 @@
                         </div>
                     </div>
                 </div>
-
-
                 <div class="card">
                     <div class="card-main">
                         <div class="card-inner">
-
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-md-10 col-md-push-1">
@@ -197,18 +166,12 @@
                         </div>
                     </div>
                 </div>
-
                 {include file='dialog.tpl'}
-
-
         </div>
-
-
     </div>
 </main>
 
 {include file='admin/footer.tpl'}
-
 
 <script>
     window.addEventListener('load', () => {
@@ -218,12 +181,10 @@
             } else {
                 var auto_reset_bandwidth = 0;
             }
-
             let contentExtra = $$getValue('content_extra');
             if (contentExtra === '') {
                 contentExtra = 'check-全球节点分布;check-快速客服响应;check-全平台客户端';
             }
-
             let data = {
                 name: $$getValue('name'),
                 auto_reset_bandwidth,
@@ -240,7 +201,6 @@
                 reset_exp: $$getValue('reset_exp'),
                 content_extra: contentExtra,
             }
-
             if ($$.getElementById('traffic-package-enable').checked) {
                 data.traffic_package = {
                     class: {
@@ -248,8 +208,7 @@
                         max: $$getValue('traffic-package-max')
                     }
                 }
-            } 
-            
+            }
             $.ajax({
                 type: "POST",
                 url: "/admin/shop",
@@ -293,13 +252,11 @@
                 }
             });
         }
-
         $("html").keydown(event => {
             if (event.keyCode == 13) {
                 submit();
             }
         });
-
         $$.getElementById('submit').addEventListener('click', submit);
     })
 </script>
