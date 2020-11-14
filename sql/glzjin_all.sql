@@ -39,15 +39,8 @@ CREATE TABLE IF NOT EXISTS `code` (
 
 CREATE TABLE IF NOT EXISTS `link` (
   `id` bigint(20) NOT NULL,
-  `type` int(11) NOT NULL,
-  `address` text NOT NULL,
-  `port` int(11) NOT NULL,
   `token` text NOT NULL,
-  `ios` int(11) NOT NULL DEFAULT '0',
-  `userid` bigint(20) NOT NULL,
-  `isp` text,
-  `geo` int(11) DEFAULT NULL,
-  `method` text
+  `userid` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS `login_ip` (
