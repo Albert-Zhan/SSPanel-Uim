@@ -187,7 +187,7 @@
             node_speedlimit: {required: true},
             sort: {required: true},
             node_bandwidth_limit: {required: true},
-            bandwidthlimit_resetday: {required: true}
+            bandwidthlimit_resetday: {required: true},
             class_name: {required: true}
         },
         submitHandler: () => {
