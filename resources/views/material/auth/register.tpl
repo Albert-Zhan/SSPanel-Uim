@@ -32,6 +32,24 @@
                             </div>
                         </div>
                     </div>
+                    {if $is_email_suffix == true}
+                        <div class="rowtocol">
+                            <div class="auth-row">
+                                <div class="form-group form-group-label dropdown">
+                                    <label class="floating-label" for="email_suffix">选择您的邮箱后缀</label>
+                                    <button class="form-control maxwidth-auth" id="email_suffix" data-toggle="dropdown">
+
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="email_suffix">
+                                        {foreach $email_suffix as $_email_suffix}
+                                            <li><a href="#" class="dropdown-option" onclick="return false;" val="{$_email_suffix}"
+                                                   data="email_suffix">{$_email_suffix}</a></li>
+                                        {/foreach}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    {/if}
                     <div class="rowtocol">
                         <div class="auth-row">
                             <div class="form-group-label auth-row">
@@ -277,6 +295,9 @@ document.getElementById('passwd').addEventListener('input', checkStrong);
                     dataType: "json",
                     data: {
                         email: $$getValue('email'),
+                        {if $is_email_suffix == true}
+                        email_suffix: $$getValue('email_suffix'),
+                        {/if}
                         name: $$getValue('name'),
                         passwd: $$getValue('passwd'),
                         repasswd: $$getValue('repasswd'),
@@ -393,6 +414,9 @@ document.getElementById('passwd').addEventListener('input', checkStrong);
                     dataType: "json",
                     data: {
                         email: $$getValue('email')
+                        {if $is_email_suffix == true}
+                        ,email_suffix: $$getValue('email_suffix')
+                        {/if}
                     },
                     success: (data) => {
                         if (data.ret) {

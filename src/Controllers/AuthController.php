@@ -255,6 +255,8 @@ class AuthController extends BaseController
             ->assign('base_url', $_ENV['baseUrl'])
             ->assign('login_token', $login_token)
             ->assign('login_number', $login_number)
+            ->assign('is_email_suffix',$_ENV['is_email_suffix'])
+            ->assign('email_suffix',$_ENV['email_suffix'])
             ->display('auth/register.tpl');
     }
 
@@ -268,6 +270,22 @@ class AuthController extends BaseController
                 $res['ret'] = 0;
                 $res['msg'] = '未填写邮箱';
                 return $response->getBody()->write(json_encode($res));
+            }
+
+            if($_ENV['is_email_suffix']==true){
+                $email_suffix = $request->getParam('email_suffix');
+                $email_suffix = trim($email_suffix);
+                if ($email_suffix == '') {
+                    $res['ret'] = 0;
+                    $res['msg'] = '未选择邮箱后缀';
+                    return $response->getBody()->write(json_encode($res));
+                }
+                if(!in_array($email_suffix,$_ENV['email_suffix'])){
+                    $res['ret'] = 0;
+                    $res['msg'] = '邮箱后缀非法';
+                    return $response->getBody()->write(json_encode($res));
+                }
+                $email=$email.$email_suffix;
             }
 
             // check email format
@@ -414,6 +432,7 @@ class AuthController extends BaseController
 
         $user->class_expire     = date('Y-m-d H:i:s', time() + (int) Config::getconfig('Register.string.defaultClass_expire') * 3600);
         $user->class            = (int) Config::getconfig('Register.string.defaultClass');
+        $user->class_name       = (int) Config::getconfig('Register.string.defaultClassName');
         $user->node_connector   = (int) Config::getconfig('Register.string.defaultConn');
         $user->node_speedlimit  = (int) Config::getconfig('Register.string.defaultSpeedlimit');
         $user->expire_in        = date('Y-m-d H:i:s', time() + (int) Config::getconfig('Register.string.defaultExpire_in') * 86400);
@@ -458,7 +477,6 @@ class AuthController extends BaseController
         $name = $request->getParam('name');
         $email = $request->getParam('email');
         $email = trim($email);
-        $email = strtolower($email);
         $passwd = $request->getParam('passwd');
         $repasswd = $request->getParam('repasswd');
         $code = trim($request->getParam('code'));
@@ -490,6 +508,28 @@ class AuthController extends BaseController
                 $res['msg'] = '系统无法接受您的验证结果，请刷新页面后重试。';
                 return $response->getBody()->write(json_encode($res));
             }
+        }
+
+        if ($email == '') {
+            $res['ret'] = 0;
+            $res['msg'] = '未填写邮箱';
+            return $response->getBody()->write(json_encode($res));
+        }
+
+        if($_ENV['is_email_suffix']==true){
+            $email_suffix = $request->getParam('email_suffix');
+            $email_suffix = trim($email_suffix);
+            if ($email_suffix == '') {
+                $res['ret'] = 0;
+                $res['msg'] = '未选择邮箱后缀';
+                return $response->getBody()->write(json_encode($res));
+            }
+            if(!in_array($email_suffix,$_ENV['email_suffix'])){
+                $res['ret'] = 0;
+                $res['msg'] = '邮箱后缀非法';
+                return $response->getBody()->write(json_encode($res));
+            }
+            $email=$email.$email_suffix;
         }
 
         // check email format

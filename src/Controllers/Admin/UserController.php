@@ -128,6 +128,7 @@ class UserController extends AdminController
         $user->money                = ($money != -1 ? $money : 0);
         $user->class_expire         = date('Y-m-d H:i:s', time() + (int) Config::getconfig('Register.string.defaultClass_expire') * 3600);
         $user->class                = (int) Config::getconfig('Register.string.defaultClass');
+        $user->class_name           = (int) Config::getconfig('Register.string.defaultClassName');
         $user->node_connector       = (int) Config::getconfig('Register.string.defaultConn');
         $user->node_speedlimit      = (int) Config::getconfig('Register.string.defaultSpeedlimit');
         $user->expire_in            = date('Y-m-d H:i:s', time() + (int) Config::getconfig('Register.string.defaultExpire_in') * 86400);
